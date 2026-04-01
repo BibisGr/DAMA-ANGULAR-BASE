@@ -1,0 +1,69 @@
+{
+  "galaxias": [
+    {
+      "id": 1,
+      "nombre": "Vía Láctea",
+      "tipo": "Espiral",
+      "diametro_anios_luz": 105700,
+      "planetas_ids": [1, 2, 3]
+    }
+  ],
+  "planetas": [
+    {
+      "id": 1,
+      "nombre": "Tierra",
+      "tipo": "Rocoso",
+      "distancia_al_sol_km": 149600000,
+      "galaxia_id": 1,
+      "lunas_ids": [1]
+    },
+    {
+      "id": 2,
+      "nombre": "Marte",
+      "tipo": "Rocoso",
+      "distancia_al_sol_km": 227900000,
+      "galaxia_id": 1,
+      "lunas_ids": [2, 3]
+    },
+    {
+      "id": 3,
+      "nombre": "Júpiter",
+      "tipo": "Gaseoso",
+      "distancia_al_sol_km": 778500000,
+      "galaxia_id": 1,
+      "lunas_ids": [4, 5]
+    }
+  ],
+  "lunas": [
+    {
+      "id": 1,
+      "nombre": "Luna",
+      "planeta_id": 1,
+      "diametro_km": 3474
+    },
+    {
+      "id": 2,
+      "nombre": "Fobos",
+      "planeta_id": 2,
+      "diametro_km": 22
+    },
+    {
+      "id": 3,
+      "nombre": "Deimos",
+      "planeta_id": 2,
+      "diametro_km": 12
+    },
+    {
+      "id": 4,
+      "nombre": "Ío",
+      "planeta_id": 3,
+      "diametro_km": 3643
+    },
+    {
+      "id": 5,
+      "nombre": "Europa",
+      "planeta_id": 3,
+      "diametro_km": 3122
+    }
+  ]
+}

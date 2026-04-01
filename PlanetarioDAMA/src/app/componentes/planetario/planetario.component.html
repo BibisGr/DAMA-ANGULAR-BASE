@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <h2>Galaxias</h2>
+  <div class="row justify-content-center m-2">
+    @for (galaxia of planetario.galaxias; track galaxia.id) {
+      <div class="card w-25 bg-dark" data-bs-theme="dark">
+        <div class="card-header">
+          <h3>{{ galaxia.nombre }}</h3>
+        </div>
+        <div class="card-body">
+          <p>DAL: {{ galaxia.diametro_anios_luz }}</p>
+          <p>Planetas:</p>
+          <p>Planetas:</p>
+          <ul>
+            @for (planeta of planetario.planetas; track planeta.id) {
+              <li>{{ planeta.nombre }}</li>
+            }
+          </ul>
+        </div>
+        <div class="card-footer">
+          <p>{{ galaxia.id }}</p>
+        </div>
+      </div>
+    }
+  </div>
+  <h2>Planetas</h2>
+  <div class="row justify-content-center m-2">
+    @for (planeta of planetario.planetas; track planeta.id) {
+      <div class="card w-25 bg-dark" data-bs-theme="dark">
+        <div class="card-header">
+          <h3>{{ planeta.nombre }}</h3>
+        </div>
+        <div class="card-body">
+          <p>DMS: {{ planeta.distancia_al_sol_km }}KM </p>
+          <p>TIPO: {{ planeta.tipo }}</p>
+          <p>Galaxia:</p>
+          <ul>
+            @for (galaxia of planetario.galaxias; track galaxia.id) {
+              <li>{{ galaxia.nombre }}</li>
+            }
+          </ul>
+          <p>Lunas: {{ planeta.lunas_ids }}</p>
+          <p>Galaxia:</p>
+          <ul>
+            @for (luna of planeta.lunas_ids; track $index) {
+              <li>{{ planetario.lunas[$index].nombre }}</li>
+            }
+          </ul>
+        </div>
+        <div class="card-footer">
+          <p>{{ planeta.id }}</p>
+        </div>
+      </div>
+    }
+  </div>
+  <h2>Lunas</h2>
+  <div class="row justify-content-center m-2">
+    @for (luna of planetario.lunas; track luna.id) {
+      <div class="card w-25 bg-dark" data-bs-theme="dark">
+        <div class="card-header">
+          <h3>{{ luna.nombre }}</h3>
+        </div>
+        <div class="card-body">
+          <p>Diametro:{{ luna.diametro_km }} KM</p>
+          <p>Planeta: </p>
+          <ul>
+            <li>{{planetario.planetas[luna.planeta_id-1].nombre}}</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <p>{{ luna.id }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

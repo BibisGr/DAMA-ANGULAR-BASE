@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <img src="{{sailorMoon.url_image}}" class="card-img-top" alt="...">
+    </div>
+    <div class="col-8">
+      <div class="card-body">
+        <h3 class="card-title text-primary">
+          {{ sailorMoon.nombre_guerrera }}</h3>
+        <h6 class="card-text">Nombre Real: {{sailorMoon.nombre_real}}</h6>
+        <p class="card-text">Edad: {{sailorMoon.edad}}</p>
+        <p class="card-text">Planeta / Cuerpo Celeste: {{sailorMoon.cuerpoCeleste_origen}}</p>
+        <p class="card-text">Rol: {{sailorMoon.rol}}</p>
+        <h6 class="card-text">Personalidad:
+        </h6>
+        @for (item of sailorMoon.personalidad; track $index) {
+          <li class="card-text">{{item}}</li>
+        }
+        <p class="card-text">Transformaciones: {{sailorMoon.transformaciones}}</p>
+        <p class="card-text">Aliados: {{sailorMoon.aliados}}</p>
+        <p class="card-text">Enemigos: {{sailorMoon.enemigos}}</p>
+        <p class="card-text">Estado: {{sailorMoon.estado? 'Vivo': 'Muerto'}}</p>
+        <h5>Armas:</h5>
+        @for (arma of sailorMoon.armas; track arma.name) {
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ arma.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">{{ arma.tipo }}</h6>
+              <p class="card-text">{{ arma.ataque }}</p>
+            </div>
+          </div>
+        }
+        <h5>Poderes:</h5>
+        @for (poder of sailorMoon.poderes ; track poder.name) {
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ poder.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">{{ poder.ataque }}</h6>
+              <p class="card-text">{{ poder.ataque }}</p>
+            </div>
+          </div>
+        }
+        <h5>Habilidades:</h5>
+        @for (skill of sailorMoon.habilidades ; track skill.name) {
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ skill.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">{{ skill.description }}</h6>
+            </div>
+          </div>
+        }
+
+      </div>
+    </div>
+  </div>
+</div>
